@@ -2,12 +2,22 @@
 
 A module that changes numbers radix ([docs](https://silent-tempest.github.io/change-radix/)).
 
-### Install
+### Install (Node.js / Browserify)
 
 `npm i --save change-radix`
 
 ```javascript
 const radix = require('change-radix')
+```
+
+### Install (Browser / Workers)
+
+```html
+<script src="https://rawgit.com/silent-tempest/change-radix/master/dist/index.min.js"></script>
+```
+
+```javascript
+radix.parse('Z', 62) // -> 61
 ```
 
 ### The use

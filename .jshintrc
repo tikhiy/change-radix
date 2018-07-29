@@ -1,4 +1,5 @@
 {
+  "predef": ["self"],
   "browserify": true,
   "esversion": 6,
   "browser": true,
