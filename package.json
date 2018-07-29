@@ -1,0 +1,30 @@
+{
+  "name": "change-radix",
+  "version": "0.0.1",
+  "description": "A module that changes numbers radix.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/silent-tempest/change-radix.git"
+  },
+  "keywords": [
+    "number",
+    "radix",
+    "base"
+  ],
+  "author": "SILENT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/silent-tempest/change-radix/issues"
+  },
+  "homepage": "https://github.com/silent-tempest/change-radix#readme",
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "jsdoc": "^3.5.5",
+    "jshint": "^2.9.5",
+    "uglify-es": "^3.3.9"
+  }
+}

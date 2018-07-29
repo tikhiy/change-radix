@@ -1,0 +1,17 @@
+{
+  "browserify": true,
+  "esversion": 6,
+  "browser": true,
+  "strict": "global",
+  "shadow": true,
+  "eqeqeq": true,
+  "eqnull": true,
+  "unused": true,
+  "undef": true,
+  "nonew": true,
+  "noarg": true,
+  "curly": true,
+  "immed": true,
+  "node": true,
+  "asi": true
+}
