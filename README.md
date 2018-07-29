@@ -1,6 +1,6 @@
 # change-radix
 
-A module that changes numbers radix.
+A module that changes numbers radix ([docs](https://silent-tempest.github.io/change-radix/)).
 
 ### Install
 
