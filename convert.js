@@ -5,7 +5,7 @@ const parse = require('./parse')
 
 /**
  * @memberof module:change-radix
- * @param {string} string A number.
+ * @param {string} string  A number.
  * @param {number} oldBase A current base of the number.
  * @param {number} newBase The base you want.
  * @returns {string}

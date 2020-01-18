@@ -5,7 +5,7 @@
  */
 
 if (typeof self !== 'undefined') {
-  self.radix = exports;
+  self.radix = exports
 }
 
 exports.radix   = require('./radix')

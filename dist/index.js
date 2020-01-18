@@ -6,7 +6,7 @@ const parse = require('./parse')
 
 /**
  * @memberof module:change-radix
- * @param {string} string A number.
+ * @param {string} string  A number.
  * @param {number} oldBase A current base of the number.
  * @param {number} newBase The base you want.
  * @returns {string}
@@ -28,7 +28,7 @@ module.exports = convert
  */
 
 if (typeof self !== 'undefined') {
-  self.radix = exports;
+  self.radix = exports
 }
 
 exports.radix   = require('./radix')
@@ -49,26 +49,26 @@ const inverted = require('./map').reduce((inverted, char, number) => {
 
 /**
  * @memberof module:change-radix
- * @param {string} string A number in a 'radix' base.
- * @param {number} radix The radix.
- * @returns {number} A number converted from 'radix' to decimal base.
+ * @param   {string} string A number to convert to the decimal base.
+ * @param   {number} base   Original base of the number.
+ * @returns {number}        Decimal representation of the number.
  * @example
  * parse('NK7qkfsZSrqYB7KGPtq9zoolE4Te', 62); // -> 1.234e+50
  * parse('5bc', 13);                          // -> 1000
  * parse('112', 5);                           // -> 32
  */
-const parse = (string, radix) => {
+const parse = (string, base) => {
   string += ''
 
-  if (radix < 2 || radix > 62) {
+  if (base < 2 || base > 62) {
     return NaN
   }
 
   let result = 0
 
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] in inverted && inverted[string[i]] < radix) {
-      result += inverted[string[i]] * Math.pow(radix, string.length - i - 1)
+    if (string[i] in inverted && inverted[string[i]] < base) {
+      result += inverted[string[i]] * Math.pow(base, string.length - i - 1)
     } else {
       return NaN
     }
@@ -86,23 +86,23 @@ const map = require('./map')
 
 /**
  * @memberof module:change-radix
- * @param {number} number An unsigned number.
- * @param {number} radix The new radix you want, between 2 and 62.
+ * @param   {number} number A typical JavaScript unsigned number.
+ * @param   {number} base   The new base you want. Must be between 2 and 62.
  * @returns {string}
  * @example
  * radix(1.234e50, 62); // -> 'NK7qkfsZSrqYB7KGPtq9zoolE4Te'
  * radix(1000, 13);     // -> '5bc'
  * radix(32, 5);        // -. '112'
  */
-const radix = (number, radix) => {
-  if (number !== number || number < 0 || radix < 2 || radix > 62) {
+const radix = (number, base) => {
+  if (number !== number || number < 0 || base < 2 || base > 62) {
     return NaN
   }
 
   let power = 1
 
   while (true) {
-    const test = Math.pow(radix, power += 1)
+    const test = Math.pow(base, power += 1)
 
     if (test > number) {
       power -= 1
@@ -113,7 +113,7 @@ const radix = (number, radix) => {
   let result = ''
 
   for (let i = power; i >= 0; i -= 1) {
-    const temp      = Math.pow(radix, i)
+    const temp      = Math.pow(base, i)
     const remaining = Math.floor(number / temp)
     number -= remaining * temp
     result += map[remaining]

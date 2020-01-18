@@ -1,6 +1,6 @@
 # change-radix
 
-A module that changes numbers radix ([docs](https://silent-tempest.github.io/change-radix/)).
+A module that changes numbers base ([docs](https://tikhiy.github.io/change-radix/)).
 
 ### Install (Node.js / Browserify)
 
@@ -13,7 +13,7 @@ const radix = require('change-radix')
 ### Install (Browser / Workers)
 
 ```html
-<script src="https://rawgit.com/silent-tempest/change-radix/master/dist/index.min.js"></script>
+<script src="https://raw.githubusercontent.com/tikhiy/change-radix/master/dist/index.min.js"></script>
 ```
 
 ```javascript

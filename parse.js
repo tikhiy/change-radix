@@ -6,26 +6,26 @@ const inverted = require('./map').reduce((inverted, char, number) => {
 
 /**
  * @memberof module:change-radix
- * @param {string} string A number in a 'radix' base.
- * @param {number} radix The radix.
- * @returns {number} A number converted from 'radix' to decimal base.
+ * @param   {string} string A number to convert to the decimal base.
+ * @param   {number} base   Original base of the number.
+ * @returns {number}        Decimal representation of the number.
  * @example
  * parse('NK7qkfsZSrqYB7KGPtq9zoolE4Te', 62); // -> 1.234e+50
  * parse('5bc', 13);                          // -> 1000
  * parse('112', 5);                           // -> 32
  */
-const parse = (string, radix) => {
+const parse = (string, base) => {
   string += ''
 
-  if (radix < 2 || radix > 62) {
+  if (base < 2 || base > 62) {
     return NaN
   }
 
   let result = 0
 
   for (let i = 0; i < string.length; i += 1) {
-    if (string[i] in inverted && inverted[string[i]] < radix) {
-      result += inverted[string[i]] * Math.pow(radix, string.length - i - 1)
+    if (string[i] in inverted && inverted[string[i]] < base) {
+      result += inverted[string[i]] * Math.pow(base, string.length - i - 1)
     } else {
       return NaN
     }
