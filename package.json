@@ -1,6 +1,6 @@
 {
   "name": "change-radix",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A module that changes numbers base.",
   "main": "index.js",
   "scripts": {
